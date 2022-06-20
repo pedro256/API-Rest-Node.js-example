@@ -1,0 +1,3 @@
+* instalação:
+config typescript, git ...
+https://www.aluiziodeveloper.com.br/criar-aplica%C3%A7%C3%A3o-node-js-com-typescript/
