@@ -1,0 +1,13 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5433,
+    "username": "postgres",
+    "password": "1234",
+    "database": "apivendas",
+    "entities": ["*/entity/*.js"],
+    "migrations": ["./src/shared/typeorm/migrations/*.ts"],
+    "cli":{
+        "migrationDir":"./src/shared/typeorm/migrations"
+    }
+}
