@@ -2,11 +2,11 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
-import '@shared/typeorm'
+//import '@shared/typeorm'
 
+const PORT = 3000
+const HOST ='0.0.0.0'
 const app = express();
-
-
 app.use(cors())
 app.use(express.json())
 app.use(routes);
@@ -26,7 +26,7 @@ app.use(
 )
 
 
-app.listen(3000,()=>{
+app.listen(PORT,HOST,()=>{
     console.log('Listening')
 })
 
