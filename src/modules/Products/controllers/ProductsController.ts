@@ -17,13 +17,10 @@ export default class ProductsController{
 
     public async show(request:Request,response:Response):Promise<Response>{
         const {id}=request.params;
-        if(typeof(id)=='number'){
-            const showProduct = new ShowProductService();
-            const product = await showProduct.execute(id);
-            return response.json(product)
-        }else{
-            throw new AppError('')
-        }
+        const idParam = Number.parseInt(id);
+        const showProduct = new ShowProductService();
+        const product = await showProduct.execute(idParam);
+        return response.json(product);
     }
     public async create(request:Request,response:Response):Promise<Response>{
         const {name,description,price,quantity}=request.body;
@@ -39,11 +36,11 @@ export default class ProductsController{
 
     public async update(request:Request,response:Response):Promise<Response>{
         const {name,description,price,quantity}=request.body;
-        const {idParam}=request.params;
-        const id = Number.parseInt(idParam);
+        const {id}=request.params;
+        const idParam = Number.parseInt(id);
         const updateProduct = new UpdateProductService();
         const product = await updateProduct.execute({
-            id,
+            id:idParam,
             name,
             price,
             quantity,
@@ -53,11 +50,11 @@ export default class ProductsController{
     }
 
     public async delete(request:Request,response:Response):Promise<Response>{
-        const {idParam}=request.params;
-        const id = Number.parseInt(idParam);
+        const {id}=request.params;
+        const idParam = Number.parseInt(id);
         const deleteProduct = new DeleteProductService();
         await deleteProduct.execute({
-            id
+            id:idParam
         })
         return response.json([])
     }
