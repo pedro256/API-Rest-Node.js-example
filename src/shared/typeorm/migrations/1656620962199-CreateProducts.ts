@@ -19,6 +19,11 @@ export class CreateProducts1656620962199 implements MigrationInterface {
                     length: '255'
                 },
                 {
+                    name:'description',
+                    type:'varchar',
+                    length:'255'
+                },
+                {
                     name:'price',
                     type:'decimal',
                     precision:10,
