@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { IProduct } from "@modules/Products/model/IProduct";
 
 @Entity('products')
@@ -18,5 +18,11 @@ export class ProductEntity implements IProduct{
 
     @Column('decimal')
     price: number;
+
+    @CreateDateColumn()
+    createdAt:Date;
+
+    @UpdateDateColumn()
+    updatedAt:Date;
 
 }
