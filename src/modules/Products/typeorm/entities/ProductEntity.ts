@@ -19,10 +19,10 @@ export class ProductEntity implements IProduct{
     @Column('decimal')
     price: number;
 
-    @CreateDateColumn()
-    createdAt:Date;
+    @CreateDateColumn({ name: 'created_at'})
+    createdAt: Date;
 
-    @UpdateDateColumn()
-    updatedAt:Date;
+    @UpdateDateColumn({ name: 'updated_at'})
+    updatedAt: Date;
 
 }

@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import 'express-async-errors'
 import express, { NextFunction, Request, Response } from 'express';
+import AppError from '@shared/erros/AppError';
 import {errors} from 'celebrate'
 import cors from 'cors';
 import routes from './routes';
