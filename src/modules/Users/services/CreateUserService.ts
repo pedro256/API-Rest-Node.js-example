@@ -1,4 +1,5 @@
 import AppError from "@shared/erros/AppError";
+import { hash } from "bcrypt";
 import { getCustomRepository } from "typeorm";
 import UserEntity from "../typeorm/entities/UserEntity";
 import UserRepository from "../typeorm/repository/UserRepository";
@@ -14,16 +15,18 @@ export default class CreateUserService{
     public async execute({firstName,secondName,email,password}:IRequest):Promise<UserEntity>{
         const userRepository = getCustomRepository(UserRepository);
         const existsUWEmail = await userRepository.ExistsUserWithEmail(email);
-        
+
         if(existsUWEmail){
             throw new AppError('Email address already used.');
         }
+
+        const hashPassword = await hash(password,8);
 
         const user = userRepository.create({
             firstName,
             secondName,
             email,
-            password
+            password:hashPassword
         })
 
         try {
@@ -31,9 +34,9 @@ export default class CreateUserService{
         } catch (error) {
             throw new AppError('err')
         }
-        
+
 
         return user;
-        
+
     }
 }
