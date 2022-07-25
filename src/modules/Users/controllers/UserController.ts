@@ -4,10 +4,10 @@ import ListUsersService from "../services/ListUsersService";
 
 
 export default class UserController {
-    
+
     public async index(req:Request,res:Response):Promise<Response>{
         const listUser = new ListUsersService();
-        const users = listUser.execute();
+        const users = await listUser.execute();
         return res.json(users);
     }
 
@@ -20,7 +20,7 @@ export default class UserController {
             email,
             password
         });
-        
+
         return res.json(user)
     }
 
