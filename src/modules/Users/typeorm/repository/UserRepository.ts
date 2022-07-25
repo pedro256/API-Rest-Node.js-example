@@ -14,12 +14,14 @@ export default class UserRepository extends Repository<UserEntity>{
         })
         return users;
     }
-    public async findByEmail(email:string):Promise<UserEntity[]>{
-        const emails = await this.find({
+    public async findByEmail(email:string):Promise<UserEntity|undefined>{
+        const emails = await this.findOne({
             where:{
                 email
-            }
-        })
+            },
+
+        });
+
         return emails;
     }
     public async ExistsUserWithEmail(email:string):Promise<boolean>{
