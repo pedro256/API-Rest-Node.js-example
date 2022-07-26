@@ -35,4 +35,8 @@ export default class UserRepository extends Repository<UserEntity>{
         }
         return false;
     }
+    public async findById(id:number):Promise<UserEntity|undefined>{
+        const user = await this.findOne(id);
+        return user;
+    }
 }

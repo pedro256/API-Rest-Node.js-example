@@ -24,4 +24,5 @@ export default class UserController {
         return res.json(user)
     }
 
+
 }
