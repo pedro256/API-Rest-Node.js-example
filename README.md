@@ -1,3 +1,12 @@
-* instalação:
-config typescript, git ...
-https://www.aluiziodeveloper.com.br/criar-aplica%C3%A7%C3%A3o-node-js-com-typescript/
+
+# EXECUTE WITH DOCKER-COMPOSE
+
+docker-compose up
+ou
+docker-compose up -d
+
+# EXECUTE MIGRATIONS
+
+so far I haven't been able to execute migrations with only migration:run
+I need change file ormconfig.json
+change host: db to host:localhost

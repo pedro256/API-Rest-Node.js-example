@@ -25,7 +25,8 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run --config ormconfig.json"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
