@@ -1,5 +1,5 @@
 import AppError from "@shared/erros/AppError";
-import { hash } from "bcrypt";
+import { hash } from "bcryptjs";
 import { isAfter,addHours } from "date-fns";
 import { getCustomRepository } from "typeorm";
 import UserRepository from "../typeorm/repository/UserRepository";
