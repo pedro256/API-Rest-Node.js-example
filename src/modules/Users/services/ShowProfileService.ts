@@ -4,10 +4,10 @@ import UserEntity from "../typeorm/entities/UserEntity";
 import UserRepository from "../typeorm/repository/UserRepository";
 
 
-export default class ShowUserService{
-    public async execute(id:number):Promise<UserEntity | undefined>{
+export default class ShowProfileService{
+    public async execute(id:number):Promise<UserEntity>{
         const userRepository = getCustomRepository(UserRepository);
-        const user = userRepository.findOne(id);
+        const user = await userRepository.findOne(id);
         if(!user){
             throw new AppError('User not Found.',404)
         }
