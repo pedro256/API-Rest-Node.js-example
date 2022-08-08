@@ -20,3 +20,4 @@ change host: db to host:localhost
 [] AUTH JWT
 [] REDIS
 [] SOLID
+[] FAKE EMAIL
