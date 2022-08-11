@@ -14,9 +14,9 @@ profileRoutes.put(
     ,
     celebrate({
         [Segments.BODY]:{
-            firstName:Joi.string().required(),
-            secondName:Joi.string().required(),
-            email:Joi.string().email().required()
+            firstName:Joi.string().required().min(1),
+            secondName:Joi.string().required().min(1),
+            email:Joi.string().email().required().min(1)
         }
     })
     ,
@@ -29,8 +29,8 @@ profileRoutes.put(
     ,
     celebrate({
         [Segments.BODY]:{
-            password: Joi.string().required(),
-            oldPassword:Joi.string().required()
+            password: Joi.string().required().min(1),
+            oldPassword:Joi.string().required().min(1)
         }
     })
     ,
