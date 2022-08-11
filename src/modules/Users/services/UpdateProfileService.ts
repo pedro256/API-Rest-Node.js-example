@@ -8,13 +8,11 @@ interface IRequest{
     firstName:string;
     secondName:string;
     email:string;
-    password:string;
-    oldPassword:string;
 }
 
 export default class UpdateProfileService{
 
-    public async execute({id,firstName,secondName,email,password,oldPassword}:IRequest):Promise<UserEntity>{
+    public async execute({id,firstName,secondName,email}:IRequest):Promise<UserEntity>{
 
         const userRepository = getCustomRepository(UserRepository);
         const user = await userRepository.findOne(id);
