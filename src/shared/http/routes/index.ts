@@ -1,3 +1,4 @@
+import custumersRouter from '@modules/Custumers/routes/custumers.routes';
 import productsRouter from '@modules/Products/routes/products.routes';
 import passwordRoutes from '@modules/Users/routes/password.routes';
 import sessionsRoutes from '@modules/Users/routes/sessions.routes';
@@ -10,6 +11,7 @@ routes.use('/products',productsRouter);
 routes.use('/users',userRoutes);
 routes.use('/sessions',sessionsRoutes);
 routes.use('/password',passwordRoutes);
+routes.use("/custumers",custumersRouter);
 
 routes.get("/",(request,response)=>{
     return response.json({
