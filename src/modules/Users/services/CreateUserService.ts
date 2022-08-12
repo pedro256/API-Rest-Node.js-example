@@ -2,7 +2,7 @@ import AppError from "@shared/erros/AppError";
 import { hash } from "bcryptjs";
 import { getCustomRepository } from "typeorm";
 import UserEntity from "../typeorm/entities/UserEntity";
-import UserRepository from "../typeorm/repository/UserRepository";
+import UserRepository from "../typeorm/repositories/UserRepository";
 
 interface IRequest{
     firstName:string;

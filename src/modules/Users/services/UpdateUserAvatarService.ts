@@ -3,7 +3,7 @@ import path from "path";
 import fs from 'fs';
 import { getCustomRepository } from "typeorm";
 import UserEntity from "../typeorm/entities/UserEntity";
-import UserRepository from "../typeorm/repository/UserRepository";
+import UserRepository from "../typeorm/repositories/UserRepository";
 import uploadConfig from '@config/upload'
 
 interface IRequest{
