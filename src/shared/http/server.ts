@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import 'express-async-errors'
+import 'dotenv/config'
 import express, { NextFunction, Request, Response } from 'express';
 import AppError from '@shared/erros/AppError';
 import {errors} from 'celebrate'
